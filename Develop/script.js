@@ -2,14 +2,9 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 
-//Global Variables
-let currentTime = document.querySelector('#currT');
-let timeLeft = 2;
-
-
-
-
 $(function () {
+  let currentTime = document.querySelector('#currT');
+
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -22,18 +17,32 @@ $(function () {
   // attribute of each time-block be used to conditionally add or remove the
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
-  //
+
+  setInterval(function () {
+    let currHour = dayjs().format('H');
+
+    for (let i=0; i<24; i++){
+      let timeSlot = document.getElementById(i);
+      if(i > currHour){
+        // console.log(document.getElementById(i));
+        timeSlot.setAttribute("class", "row time-block future");
+      }
+      else if(i == currHour){
+        timeSlot.setAttribute("class", "row time-block present");
+      }
+      else if(i < currHour){
+        timeSlot.setAttribute("class", "row time-block past");
+      }
+    }
+  }, 1000);
+  
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
   
-  
+
   // TODO: Add code to display the current date in the header of the page.
-  timeInterval = setInterval(function() {
-    if (timeLeft > 1){
-      currentTime.innerText = dayjs().format('MMM DD, YYYY [at] hh:mm:ssA');
-    }else{
-      return;
-    }
+  setInterval(function() {
+    currentTime.innerText = dayjs().format('MMM DD, YYYY [at] hh:mm:ssA');
   }, 500);
 });
