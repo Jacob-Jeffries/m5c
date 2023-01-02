@@ -16,7 +16,7 @@ If the page is closed and reloaded tasks can be retrieved from local storage, as
 
 https://jacob-jeffries.github.io/m5c/
 
-![Web App Screen Shot](./Assets/screenshot.png)
+![Web App Screen Shot](../Assets/screenshot.png)
 
 ## Credits
 
