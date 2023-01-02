@@ -1,32 +1,3 @@
-# Daily Calendar Application
-
-## Description
-
-This is a small web app meant to organize a daily todo list. Entries can be made by the hour into the text area of each time block, saved, and recalled from local storage upon page reload.
-
-## Installation
-
-No installation is necessary.
-
-## Usage
-
-Load the page and click on a specific text area to input your hourly tasks. Once entered click on the save button to the right of reach text area to save you tasks. 
-
-If the page is closed and reloaded tasks can be retrieved from local storage, as long as the user data is not cleared. You may need to turn off clearing data on you browser upon closing the browser. 
-
-https://jacob-jeffries.github.io/m5c/
-
-![Web App Screen Shot](./Assets/screenshot.png)
-
-## Credits
-
-I utilizied the following API's:
-
-* jQuery: https://jquery.com/
-* Day.js: https://day.js.org/
-
-## License
-
 MIT License
 
 Copyright (c) [2022] [Jacob Jeffries]
