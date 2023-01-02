@@ -12,6 +12,12 @@ $(function () {
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
 
+  $(this).on('click', '.btn', function(){
+    let hour = $(this.parentElement);
+    console.log(hour[0].id);
+  });
+
+
   //The code snippet below compares the current hour to the ID's of each hour slot on the web app and changes the color based on the time: past, present, future
   setInterval(function () {
     let currHour = dayjs().format('H');
@@ -30,11 +36,15 @@ $(function () {
       }
     }
   }, 1000);
-  
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
-  
+
+  //The code snippet below checks for saved TODOs in local storage
+  for(let x=0; x<24; x++){
+    let todo = localStorage.getItem(x);
+    if(todo){
+      let textArea = document.body.children[1].children[x].children[1]
+      todo.innerText = textArea;
+    };
+  };  
 
   //The code snippet below pings the system time every 500ms and displays it on the web app
   setInterval(function() {
