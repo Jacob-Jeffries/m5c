@@ -1,4 +1,16 @@
+header {
+  padding: 0px;
+  position: fixed;
+  margin-top: -250px;
+  max-width: 100%;
+  display:  flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  min-width: 100%;
+}
+
 body {
+  margin-top: 250px;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
 }
@@ -8,7 +20,7 @@ textarea {
   border: none;
   resize: none;
   color: #000000;
-  border-left: 1px solid black;
+  border-left: 2px solid black;
   padding: 10px;
 }
 
@@ -21,7 +33,7 @@ textarea {
 }
 
 .row {
-  border-top: 1px solid white;
+  border-top: 2px dashed white;
 }
 
 .hour {
