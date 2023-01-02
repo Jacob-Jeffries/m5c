@@ -1,3 +1,4 @@
+/*Added a bit of code to keep the header section stuck to the top of the page*/
 header {
   padding: 0px;
   position: fixed;

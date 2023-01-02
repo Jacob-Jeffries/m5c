@@ -8,10 +8,10 @@ $(function () {
   //The code snippet below listens for a click on each save button, then gets the parent ID of the specific button clicked and saves the text to the local storage
   $(this).on('click', '.btn', function(){
     let hour = $(this.parentElement);
-    console.log(hour[0].id);
+    // console.log(hour[0].id);
     let id = hour[0].id;
     todoText = document.body.children[1].children[id].children[1].value;
-    console.log(todoText);
+    // console.log(todoText);
     localStorage.setItem(id, todoText);
   });
 
@@ -23,7 +23,6 @@ $(function () {
     for (let i=0; i<24; i++){
       let timeSlot = document.getElementById(i);
       if(i > currHour){
-        // console.log(document.getElementById(i));
         timeSlot.setAttribute("class", "row time-block future");
       }
       else if(i == currHour){
@@ -37,14 +36,14 @@ $(function () {
 
   //The code snippet below checks for saved TODOs in local storage
   for(let x=0; x<24; x++){
-    console.log('Checking Local Storage for Hour: ' + x);
+    //console.log('Checking Local Storage for Hour: ' + x);
     let todo = localStorage.getItem(x);
     if(todo){
-      console.log('Stored Value: ' + todo);
+      // console.log('Stored Value: ' + todo);
       let textArea = document.body.children[1].children[x].children[1]
       textArea.innerText = todo;
     }else{
-      console.log('--No Stored Value--');
+      // console.log('--No Stored Value--');
     };
   };  
 
