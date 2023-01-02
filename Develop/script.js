@@ -36,7 +36,7 @@ $(function () {
 
   //The code snippet below checks for saved TODOs in local storage
   for(let x=0; x<24; x++){
-    // console.log('Checking Local Storage for ID: ' + x);
+    //console.log('Checking Local Storage for Hour: ' + x);
     let todo = localStorage.getItem(x);
     if(todo){
       // console.log('Stored Value: ' + todo);
